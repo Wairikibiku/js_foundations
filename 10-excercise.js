@@ -1,3 +1,4 @@
+// parameter is a variable a ssigned during function call
 // a greeting function
 function greet(name) {
    console.log("Hello, " + name + "!"); //name serves as the parameter 
@@ -55,3 +56,40 @@ console.log(fizzBuzzNumber(3));   // Fizz
 console.log(fizzBuzzNumber(5));   // Buzz
 console.log(fizzBuzzNumber(15));  // FizzBuzz
 console.log(fizzBuzzNumber(7));   // 7
+
+sum(3,4);
+
+function sum(a,b) {
+ return a + b;
+}
+//call back functions
+function addThenMultiply(a, b, multiplyFunctionToCall){
+  const addition = a + b;
+
+  return multiplyFunctionToCall(addition);
+}
+console.log(
+  addThenMultiply(3, 4, function (num){
+    return num* 7
+  })
+);
+
+let items = ["baking soda", "coke", "fizz"];// array of the items
+ 
+let itemPrices = [4000, 2000, 1000];// array of the item prices
+// assume the highest and lowest are [0]
+ let highest = itemPrices[0];
+ let lowest = itemPrices[0];
+ // loop through the remaining
+  for (let i = 1; i < itemPrices.length; i++) {
+    if (itemPrices[i] > highest) {
+        highest = itemPrices[i];
+    }
+    if (itemPrices[i] < lowest) {
+        lowest = itemPrices[i];
+    }
+}
+
+// Display results
+console.log("Highest price: $" + highest);
+console.log("Lowest price: $" + lowest);
